@@ -1,0 +1,69 @@
+class ScreenDimmer:
+    # 1. The Constructor (sets up initial variables/state)
+    def __init__(self, owner_name):
+        self.owner = owner_name       
+        self.is_active = False       
+
+    # 2. Method to turn the dimmer ON
+    def activate_dimmer(self):
+        self.is_active = True
+        print(f"Privacy screen activated for {self.owner}!")
+
+    # 3. Method to turn the dimmer OFF
+    def deactivate_dimmer(self):
+        self.is_active = False
+        print("Privacy screen turned off. Back to normal brightness.")
+
+# --- How to run it ---
+    # Create an object from our class
+    my_screen = ScreenDimmer("Student")
+    
+    # Call the methods
+    my_screen.activate_dimmer()
+    my_screen.deactivate_dimmer()
+
+====================================================================================
+
+class MultiFactorAuth:
+    # 1. The Constructor (sets up initial variables/state)
+    def __init__(self, username):
+        self.username = username       
+        self.is_logged_in = False      
+
+    # 2. First factor: Password check method
+    def verify_password(self, password):
+        print(f"Password verified for user: {self.username}")
+
+    # 3. Second factor: OTP (One-Time Password) check method
+    def verify_otp(self, otp_code):
+        self.is_logged_in = True
+        print("OTP code verified! Multi-Factor Authentication successful.")
+
+# --- How to run it ---
+    mfa = MultiFactorAuth("Student123")
+    mfa.verify_password("Secret123")
+    mfa.verify_otp("482910")
+
+=====================================================================================
+
+class PasswordMasker:
+   # 1. The Constructor (sets up initial variables/state)
+    def __init__(self, raw_password):
+        self.raw_password = raw_password  
+        self.is_masked = True             
+
+  # 2. Method to hide/obfuscate the password
+    def mask_password(self):
+        self.is_masked = True
+        hidden = "******"                 
+        print(f"Masked password: {hidden}")
+
+   # 3. Method to reveal the password
+    def reveal_password(self):
+        self.is_masked = False
+        print(f"Revealed password: {self.raw_password}")
+
+# --- How to run it ---
+  masker = PasswordMasker("MySecurePassword")
+  masker.mask_password()
+  masker.reveal_password()
